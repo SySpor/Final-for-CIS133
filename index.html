@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🙂 Who are you? 🙁</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function setStickFigure() {
+        let imageName = "";
+        if (document.getElementById("long").checked) {
+          imageName += "long";
+        }
+        if (document.getElementById("short").checked) {
+          imageName += "short";
+        }
+        if (document.getElementById("happy").checked) {
+          imageName += "happy";
+        }
+        if (document.getElementById("sad").checked) {
+          imageName += "sad";
+        }
+        imageName += ".png";
+        console.log(imageName);
+        document.getElementById("stick-figure").src = imageName;
+      }
+    </script>
+  </head>
+  <body style="background-image: url(watercolor.jpg)">
+    <h1
+      style="
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgb(204, 238, 238);
+      "
+    >
+      Let Me Draw You!
+    </h1>
+    <form>
+      <fieldset>
+        <legend>Do you have long hair or short hair?</legend>
+        <input type="radio" id="long" name="hair" checked />
+        <label for="long">Long</label>
+        <input type="radio" id="short" name="hair" />
+        <label for="short">Short</label>
+      </fieldset>
+      <fieldset>
+        <legend>How are you feeling?</legend>
+        <input type="radio" id="happy" name="feeling" checked />
+        <label for="happy">Happy</label>
+        <input type="radio" id="sad" name="feeling" />
+        <label for="sad">Sad</label>
+      </fieldset>
+      <div
+        style="font-size: large; text-align: center"
+        onclick="setStickFigure()"
+      >
+        Submit
+      </div>
+      <img id="stick-figure" src="" alt="" />
+    </form>
+  </body>
+</html>
